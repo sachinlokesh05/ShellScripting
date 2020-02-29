@@ -1,0 +1,52 @@
+#!/bin/bash -x
+
+#constants
+NUM_PEOPLES=50;
+declare -A Month=()
+count=0;
+function getMonth() {
+	(( count++ ))
+	month = $(( RANDOM%13 ));
+	echo month, count
+
+	read month_value id < <(getMonth)
+	echo "$month_value $id"
+#	month_value=$( getMonth $1 );
+	case $( month_value  in
+		1)
+		Month[1]=month_value;
+		;;
+		2)
+		Month[2]=month_value;
+		;;
+		3)
+		Month[3]=month_value;
+		;;
+		4)
+		Month[4]=month_value;
+		;;
+		5)
+		Month[5]=month_value;
+		;;
+		6)
+		Month[6]=month_value;
+		;;
+
+
+NUM_PEOPLES=50;
+declare -A Month=()
+count=0;
+function getMonth() {
+        (( count++ ))
+        ((month = $(( RANDOM%13 )) ))
+        echo $month  $count
+
+}
+
+
+function addTolist() {
+        read month_value id < <(getMonth)
+        echo $month_value.............. $id
+        }
+        
+addTolist
