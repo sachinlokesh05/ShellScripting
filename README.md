@@ -1,9 +1,9 @@
 The following examples are valid variable names −
 
-_ALI
-TOKEN_A
-VAR_1
-VAR_2
+_ali
+token_a
+var_1
+var_2
 
 variable_name=variable_value
 
