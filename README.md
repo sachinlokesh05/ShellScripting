@@ -6,29 +6,28 @@ The following examples are valid variable names −
 - var_2
 
 variable_name=variable_value
-
+```sh
 VAR1="Zara Ali"
 VAR2=100
-
+```
 ------------
-
+```sh
 #!/bin/sh
 
 NAME="Zara Ali"
 echo $NAME
-
+```
 -------------
 
 Read-only Variables
 -----------
-
-Live Demo
+```sh
 #!/bin/sh
 
 NAME="Zara Ali"
 readonly NAME
 NAME="Qadiri"
-
+```
 -------------
 
 /bin/sh: NAME: This variable is read only.
@@ -36,12 +35,12 @@ NAME="Qadiri"
 
 Unsetting Variables
 ------------
-
+```sh
 #!/bin/sh
 NAME="Zara Ali"
 unset NAME
 echo $NAME
-
+```
 -----------
 note:The above example does not print anything. You cannot use the unset command to unset variables that are marked readonly.
 ------------------
@@ -59,15 +58,15 @@ Special Parameters $* and $@
 
 There are special parameters that allow accessing all the command-line arguments at once. $* and $@ both will act the same unless they are enclosed in double quotes, "".
 
--------------------------
-
+------------------------
+```sh
 #!/bin/sh
 
 for TOKEN in $*
 do
    echo $TOKEN
 done
-
+```
 ---
 
 $./test.sh Zara Ali 10 Years Old
@@ -84,23 +83,23 @@ Defining Array Values
 syntax:
 	array_name[index]=value
 As an example, the following commands −
-
+```sh
 NAME[0]="Zara"
 NAME[1]="Qadir"
 NAME[2]="Mahnaz"
 NAME[3]="Ayan"
 NAME[4]="Daisy"
-
+```
 If you are using the bash shell, here is the syntax of array initialization −
 
 array_name=(value1 ... valuen)
 
 Accessing Array Values
-
+```sh
 ${array_name[index]}
-
+```
 ----------------------------------
-
+```sh
 #!/bin/sh
 
 NAME[0]="Zara"
@@ -110,7 +109,7 @@ NAME[3]="Ayan"
 NAME[4]="Daisy"
 echo "First Index: ${NAME[0]}"
 echo "Second Index: ${NAME[1]}"
-
+```
 ---------------------------------
 $./test.sh
 First Index: Zara
@@ -119,10 +118,10 @@ Second Index: Qadir
 -------------------------------------
 
 You can access all the items in an array in one of the following ways −
-
+```sh
 ${array_name[*]}
 ${array_name[@]}
-
+```
 We will now discuss the following operators −
 
 --Arithmetic Operators
@@ -133,12 +132,11 @@ We will now discuss the following operators −
 
 add of two numbers--
 ----------------------
-
+```sh
 #!/bin/sh
-
 val=`expr 2 + 2`
-
 echo "Total value : $val"
+```
 -------------------------
 
 Relational Operators
@@ -178,16 +176,18 @@ This is logical negation. This inverts a true condition into false and vice vers
 This is logical OR. If one of the operands is true, then the condition becomes true.	
 
 ex:
+```sh
 [ $a -lt 20 -o $b -gt 100 ] is true.
-
+```
 
 -a	
 ------
 This is logical AND. If both the operands are true, then the condition becomes true otherwise false.
 
 ex:
+```sh
 [ $a -lt 20 -a $b -gt 100 ] is false.
-
+```
 
 String Operators:-
 
