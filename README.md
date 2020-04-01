@@ -11,33 +11,41 @@ VAR1="Zara Ali"
 VAR2=100
 
 ------------
+
 #!/bin/sh
 
 NAME="Zara Ali"
 echo $NAME
+
 -------------
 
 Read-only Variables
 -----------
+
 Live Demo
 #!/bin/sh
 
 NAME="Zara Ali"
 readonly NAME
 NAME="Qadiri"
+
 -------------
+
 /bin/sh: NAME: This variable is read only.
 -------------
+
 Unsetting Variables
 ------------
-#!/bin/sh
 
+#!/bin/sh
 NAME="Zara Ali"
 unset NAME
 echo $NAME
+
 -----------
 note:The above example does not print anything. You cannot use the unset command to unset variables that are marked readonly.
 ------------------
+
 Variable Types
 
 Local Variables − A local variable is a variable that is present within the current instance of the shell. It is not available to programs that are started by the shell. They are set at the command prompt.
@@ -52,20 +60,25 @@ Special Parameters $* and $@
 There are special parameters that allow accessing all the command-line arguments at once. $* and $@ both will act the same unless they are enclosed in double quotes, "".
 
 -------------------------
+
 #!/bin/sh
 
 for TOKEN in $*
 do
    echo $TOKEN
 done
+
 ---
+
 $./test.sh Zara Ali 10 Years Old
 Zara
 Ali
 10
 Years
 Old
+
 ----------------------------
+
 Defining Array Values
 
 syntax:
@@ -85,7 +98,9 @@ array_name=(value1 ... valuen)
 Accessing Array Values
 
 ${array_name[index]}
+
 ----------------------------------
+
 #!/bin/sh
 
 NAME[0]="Zara"
@@ -95,11 +110,14 @@ NAME[3]="Ayan"
 NAME[4]="Daisy"
 echo "First Index: ${NAME[0]}"
 echo "Second Index: ${NAME[1]}"
+
 ---------------------------------
 $./test.sh
 First Index: Zara
 Second Index: Qadir
+
 -------------------------------------
+
 You can access all the items in an array in one of the following ways −
 
 ${array_name[*]}
@@ -115,9 +133,11 @@ We will now discuss the following operators −
 
 add of two numbers--
 ----------------------
+
 #!/bin/sh
 
 val=`expr 2 + 2`
+
 echo "Total value : $val"
 -------------------------
 
